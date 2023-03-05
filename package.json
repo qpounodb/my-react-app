@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "sudo docker build -t my-react-app .",
+    "docker:local-build": "yarn build && sudo docker build -f ./docker/nginx/Dockerfile -t my-react-app .",
+    "docker:up": "sudo docker compose up -d",
+    "docker:down": "sudo docker compose down"
   },
   "dependencies": {
     "react": "^18.2.0",
